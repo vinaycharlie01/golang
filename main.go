@@ -2,46 +2,48 @@ package main
 
 import "fmt"
 
-type contactInfo struct {
-	email   string
-	pincode int
-}
-type person struct {
-	firstName string
-	lastName  string
-	contactInfo
-}
-
-func (p *person) updateName(newFirstName string) {
-	(*p).firstName = newFirstName
-
-}
-
-func (p person) print() {
-	fmt.Printf("%+v", p)
-
-}
-
 func main() {
+	// fmt.Println("enter your number:")
+	// var a float64
+	// fmt.Scanln(&a)
+	// fmt.Println("enter your number:")
+	// var b float64
+	// fmt.Scanln(&b)
+	// b = math.Min(a, b)
+	// if b == a {
+	// 	d := b / a
+	// 	fmt.Println(d)
 
-	// alex := person{"Alex", "Anderson"} 1
-	// alex := person{firstName: "Alex", lastName: "Anderson"} 2
-	// var alex person
-	// alex.firstName = "Alex"
-	// alex.lastName = "James" 3
-	// fmt.Println(alex)
-	// fmt.Printf("%+v", alex)
+	// } else {
+	// 	e := a / b
+	// 	fmt.Println(e)
+	// }
 
-	jim := person{
-		firstName: "jim",
-		lastName:  "Party",
-		contactInfo: contactInfo{
-			email:   "jim@gmail.com",
-			pincode: 563101,
-		},
+	// for i := 1; i <= 100; i++ {
+	// 	if i%3 == 0 {
+	// 		fmt.Println("Fizz", i)
+	// 	}
+	// 	if i%5 == 0 {
+	// 		fmt.Println("Buzz", i)
+	// 	}
+	// 	if i%3 == 0 && i%5 == 0 {
+	// 		fmt.Println("FizzBuzz", i)
+	// 	}
+	// }
+
+	b := hello("vinay")
+	fmt.Println(b)
+}
+
+func hello(x interface{}) (b []interface{}) {
+
+	switch x.(type) {
+	case string:
+		b = append(b, true)
+		return b
+	case float64:
+		b = append(b, false)
+		return b
 	}
-	jimPointer := &jim
-	jimPointer.updateName("KALYAN")
-	jim.print()
-
+	return append(b, b)
 }
